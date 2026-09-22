@@ -13,3 +13,13 @@ for raw in sys.stdin:
         text = line[len("TEXT "):]
 
 # TODO: build the alphabet->index map and emit comma-separated ids.
+
+alpha_dick = {ch : str(index) for index, ch in enumerate(alphabet)}
+
+result = []
+
+for ch in text:
+    result.append(alpha_dick.get(ch,"-1"))
+
+print(','.join(result))
+
